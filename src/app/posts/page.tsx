@@ -84,9 +84,8 @@ export default function Posts() {
         <div className="flex justify-center flex-col items-center min-h-screen">
             <p className="text-4xl mb-10">Post Page</p>
             {posts.map((post) => (
-                <div className="grid grid-flow-col gap-2">
+                <div key={post.id} className="grid grid-flow-col gap-2">
                     <Link
-                        key={post.id}
                         href={`/posts/${post.id}`}
                         className="bg-blue-500 border-none p-2 m-2 rounded-md"
                     >
