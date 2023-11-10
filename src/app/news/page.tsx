@@ -27,8 +27,8 @@ export default function News() {
       <p className="text-2xl mt-10">
         Top News from NewYork Times
       </p>
-      {data?.results.map((item) => (
-        <NewsItems {...item} />
+      {data?.results.map((item, idx) => (
+        <NewsItems key={idx} {...item} />
       ))}
     </div>
   );
