@@ -86,6 +86,7 @@ export default function Posts() {
             {posts.map((post) => (
                 <div className="grid grid-flow-col gap-2">
                     <Link
+                        key={post.id}
                         href={`/posts/${post.id}`}
                         className="bg-blue-500 border-none p-2 m-2 rounded-md"
                     >
@@ -93,6 +94,7 @@ export default function Posts() {
                     </Link>
                     {post.comments.map((comment) => (
                         <Link
+                            key={comment.id}
                             href={`/posts/${post.id}/comments/${comment.id}`}
                             className="bg-red-500 border-none p-2 m-2 rounded-md"
                         >
