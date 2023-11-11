@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
 import "./globals.css";
 import ReactQueryWrapper from "@/wrappers/ReactQueryWrapper";
+import ContextWrapper from "@/wrappers/ContextWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReactQueryWrapper>
-        <body className={inter.className}>
-          <Header />
-          {children}
-        </body>
+        <ContextWrapper>
+          <body className={inter.className}>
+            <Header />
+            {children}
+          </body>
+        </ContextWrapper>
       </ReactQueryWrapper>
     </html>
   );
