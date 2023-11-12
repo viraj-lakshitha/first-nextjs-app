@@ -97,3 +97,24 @@ export enum Updated {
   Monthly = "MONTHLY",
   Weekly = "WEEKLY",
 }
+
+export type ContactRequest = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+export type ContactResponse = {
+  status: HttpResponseStatus
+  code: 200 | 201 | 404 | 500 | 400 | 405;
+  message: string
+};
+
+export enum HttpResponseStatus {
+    OK = "OK",
+    CREATED = "CREATED",
+    NOT_FOUND = "NOT FOUND",
+    INTERNAL_SERVER_ERROR = "INTERNAL SERVER ERROR",
+    BAD_REQUEST = "BAD REQUEST",
+    METHOD_NOT_ALLOWED  = "METHOD NOT ALLOWED",
+}

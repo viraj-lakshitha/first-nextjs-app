@@ -1,5 +1,10 @@
 import axios from "axios";
-import { Pokedex, TopNewsResponse } from "./types";
+import {
+  ContactRequest,
+  Pokedex,
+  TopNewsResponse,
+  ContactResponse,
+} from "./types";
 
 export const useFetchTopNews = async (): Promise<TopNewsResponse> => {
   const API_KEY = process.env.NEXT_PUBLIC_NYTIME_API_KEY;
@@ -11,5 +16,12 @@ export const useFetchTopNews = async (): Promise<TopNewsResponse> => {
 
 export const useFetchBooks = async (): Promise<Pokedex> => {
   const response = await axios.get("/api/books");
+  return response.data;
+};
+
+export const useCreateContact = async (
+  data: ContactRequest
+): Promise<ContactResponse> => {
+  const response = await axios.post("/api/contacts", JSON.stringify(data));
   return response.data;
 };
