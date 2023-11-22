@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import "./globals.css";
 import ReactQueryWrapper from "@/wrappers/ReactQueryWrapper";
 import ContextWrapper from "@/wrappers/ContextWrapper";
+import PrimeReactWrapper from "@/wrappers/PrimeReactWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,9 @@ export default function RootLayout({
         <ContextWrapper>
           <body className={inter.className}>
             <Header />
-            {children}
+            <PrimeReactWrapper>
+              {children}
+            </PrimeReactWrapper>
           </body>
         </ContextWrapper>
       </ReactQueryWrapper>
